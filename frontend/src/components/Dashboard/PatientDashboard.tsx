@@ -15,7 +15,7 @@ export function PatientDashboard() {
     try {
       const token = localStorage.getItem('token');
       const res = await axios.get(
-        `http://localhost:5000/api/appointments/patient/${user?.id}`,
+        `http://https://doctorappui.onrender.com/api/appointments/patient/${user?.id}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setAppointments(res.data);
@@ -27,7 +27,7 @@ export function PatientDashboard() {
   const deleteAppointment = async (id: string) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5000/api/appointments/${id}`, {
+      await axios.delete(`https://doctorappui.onrender.com/api/appointments/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       fetchAppointments();

@@ -25,7 +25,7 @@ export function BookingModal({ doctor, onClose, refreshAppointments }: BookingMo
 
     setLoading(true);
     try {
-      await axios.post('http://localhost:5000/api/appointments', {
+      await axios.post('https://doctorappui.onrender.com/api/appointments', {
         doctorId: doctor.id,
         patientId: user?.id,
         date,
